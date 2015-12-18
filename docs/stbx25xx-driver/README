@@ -1,0 +1,112 @@
+IBM STB Controller Linux Device Driver
+
+------------------------------------------------------------------------------------------
+WHAT IS THIS PACKAGE?
+
+1.  A/V driver
+      a. demux driver
+      b. audio driver
+      c. video driver
+      d. denc driver
+2.  OS Adaptation
+3.  IR driver
+4.  Smartcard driver
+5.  Graphics driver
+6.  Frame buffer driver (depend on graphics driver)
+7.  Realtime clock and front panel driver (STBx25xx only)
+8.  Tuner driver for Sony satellite tuner.
+9.  Serial Control Port (SCP) driver
+10. Teletext Driver (TTX)
+
+11. Test applications
+      a.  test_av  for basic AV
+      b.  tstrawir  for IR
+      c.  gfxtest  for graphics
+      d.  fbtest  for 8 bit color simple Linux frame buffer test
+      e.  ee_t   for eeprom test
+      f.  vclip_t   for video clip mode test
+      g.  aclip_t  for audio clip mode test
+      h.  tv_t
+      i.  test_rec_ts,  test_pvr,  test_rec_pes  for PVR functions
+      j.  scit  for smart card tests
+      k.  rtc_t for realtime clock and front panel display test (STBx25xx only)
+      l.  tuner_test for programming the Sony satellite tuner
+      m.  scpt for Serial Control Port tests
+      n.  test_ttx for Teletext Driver
+      o.  test_rec_bkt_nb test_rec_pes_nb test_rec_ts_nb test_pvr_nb
+------------------------------------------------------------------------------------------
+MAJOR CHANGES SINCE LAST RELEASE
+Note:   Refer also to Changes.txt for other changes.
+
+   1. Support has been added for the Montavista 3.1 LSP
+
+------------------------------------------------------------------------------------------
+MAKE:
+
+  1. Change enviroment sets in config.make if your working environment is different with our's
+  2. Check config files under "include/hw".   Correct your architecture settings and memory settings
+  3. Check "aud/readme.txt",  "vid/readme.txt" for correctly specifying your audio/video micro codes.
+  4. run make
+  5. run make install
+
+  Delete:
+     run make clean
+
+------------------------------------------------------------------------------------------
+HOW TO TEST?
+
+1. make device node in target/dev
+   mknod demuxapi0  c 102 0
+   mknod demuxapi1  c 102 1
+   mknod demuxapi2  c 102 2
+   mknod pvr        c 102 3
+   mknod adec_dev   c 202 0
+   mknod adec_mpg   c 202 0
+   mknod aud_mpeg   c 202 0    (compatibility with vesta)
+   mknod adec_ac3   c 202 1
+   mknod adec_mixer c 202 3
+   mknod adec_pcm   c 202 2
+   mknod vdec_dev   c 203 0
+   mknod vid        c 203 0
+   mknod irmouse    c 10 11
+   ln -sf irmouse mouse
+   mknod rawir      c 100 0
+   mknod stbgfx     c 251 0
+   mknod sci0       c 169 0
+   mknod sci1       c 169 1
+   mknod stbrtc     c 240 0    # STBx25xx only
+   mknod stb_flash  c 199 0    # for use with testing flash driver only
+   mknod fe_sonysat c 250 0
+   mknod scp        c 248 0
+   mknod ttx0       c 252 192
+
+
+2. insmod os_core       # This is the basic driver of all
+   insmod av_core       # This is for autio/video function plusing initializing of DENC
+   insmod ircombo       # This is for all IR devices (remote controller, Acer keyboard/mouse)
+   insmod gfx           # This is for all graphics acceleration functions
+   insmod osdfb         # This is the Linux frame buffer based on the graphics driver
+   insmod sci_drv       # This is the smart card driver
+   insmod stbrtc        # This is the realtime clock and front panel driver (STBx25xx only)
+   insmod fe_sonysat    # If the Sony satellite tuner is attached
+   insmod scp_drv       # This is the Serail Control Port driver
+   insmod ttx           # This is the Teletext Driver
+
+3. Tests
+
+     a. run test_av
+        After running test_av, the TV will start playing automatically.
+        Press enter to change channel.
+        Press 'q' to quit.
+
+        *** For test_av to run correctly it is necessary to deliver an MPEG-2 audio/video transport
+            stream to the evaluation board. A Sony satellite tuner is supplied with the STB evaluation
+            kit for this purpose. The tuner can be programmed using the tuner_test program supplied
+            with the evaluation kit software. See the readme.txt file in the fe_sonysat directory for
+            information about the tuner_test program.
+
+     b. run tstrawir    # to test the rawir device
+     c. run gfxtest     # to test graphics acceleration.  "gfxtest -h" to see some options
+     d. run scpt        # to test the Serial Control Port
+     e. run test_ttx    # to test the Teletext Driver
+  ...

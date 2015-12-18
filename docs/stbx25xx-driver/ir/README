@@ -1,0 +1,64 @@
+-----------------------------------------------------------------------
+| IR Driver for Redwood 5 (Linux Edition)  version 1.0                |
+-----------------------------------------------------------------------
+
+0. What is new
+
+Version 1.0   Apr/17/2002
+    "code copy & paste editing bug" fixed.
+    Enabled RAW capture mode of remote control as an option
+
+Version 0.1   Sept/29/2001
+    The first release of the IR driver built on new architecture.
+
+
+1. Introduction
+
+This is the first release of the IR driver for Linux.  In this release, we support
+the following IR devices:
+
+    IR Remote Controllers
+         Cinema 7 IR controller in Hitachi mode
+    IR Keyboard / Mouse
+	Acer infrared keyboard (Model No: WIL-14M, Revision No: 1.5)
+        (Support of this device depends on the linux general keyboard driver and 
+         generic busmouse driver interface)
+
+2.Requirement
+The driver is dependent on the stbkb driver and generic busmouse support, which 
+should be compiled into the kernel. 
+
+3.Installation
+Modify Makefile and make changes according to your config.
+
+  There are two compiling options can be defined in LOCAL_CFLAGS
+    _IR_MOUSE_SUPPORT   Define this to enable Acer keyboard mouse pad support.
+    _IR_RAWMODE_        Define this to enable capturing of all remote controll 
+                        codes without filtering and translating 
+                        **** This is not compatible with old applications ****
+
+
+
+In the current directory, type these commands,
+	
+	$make
+	$make install
+
+On target platform :
+     cd /dev
+     mknod irmouse c 10 11
+     ln -sf irmouse mouse
+     mknod rawir c 100 0 
+     
+
+then driver can be loaded.
+
+A example using the IR remote controller device can be found under the `test' subdir. 
+It is also installed by `make install' to the target platform as `tstrawir'. 
+
+
+4.Limitation
+
+-------------------------------------------------------------------------------
+
+

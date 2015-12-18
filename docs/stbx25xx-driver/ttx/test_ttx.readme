@@ -1,0 +1,44 @@
+TEST_TTX Teletext Application README File
+-----------------------------------------
+
+Purpose:     The purpose of this readme is to describe how to use the
+             "test_ttx" application.
+
+Preliminary: Before using the "test_ttx" application, ensure that the
+             Teletext node has been created and the module has been
+             installed.  Refer to the readme file in the "STB04xxx"
+             directory for details.
+
+Invokation:  Type "test_ttx" and then enter on the Linux command line to
+             display the Teletext command prompt.
+
+Menu
+Options:     Below is a description of the menu commands supported:
+               1. t h[elp]            - Displays the command menu.
+               2. t init              - Initializes the Teletext Driver. Open
+                                        required drivers and allocate resources.
+                                        This step is required before the
+                                        teletext display can be started.
+               3. t term              - Terminate the Teletext Driver. Close
+                                        all drivers and release all resources.
+               4. t start <ppid tpid> - Start teletext display where:
+                                         ppid = the PCR PID
+                                         tpid = Teletext PID
+                                        Teletext driver must be initialized.
+               5. t stop              - Stop teletext processing
+               6. t stat <get|clear>  - Get:   Get Teletext processing stats.
+                                        Clear: Clear Teletext processing stats.
+               7. t q[quit]           - Close the Teletext Driver (ie. "t term"
+                                        is implicitly performed) and return to
+                                        the Linux command prompt.
+
+Application
+Notes:       1. Teletext is supported in PAL mode only.
+             2. During initialization of the Teletext driver, an attempt
+                will be made to open the Video Driver to change the video
+                format to PAL mode.  In the event that the video driver is
+                already opened (ie. by the "test_av" application), the open
+                will fail since the video driver can only be opened by one
+                application.  In this case, "test_ttx" assumes that the
+                display format has already been set to the PAL format.  If
+                it has not, the Teletext driver initialization step will fail.

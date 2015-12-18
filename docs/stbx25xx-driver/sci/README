@@ -1,0 +1,68 @@
+This is a release version of Smart Card Linux device driver
+
+1. General information of sci_drv
+Major Number of sci_drv = 169
+command "mknode /dev/sci0 c 169 0"
+		"mknode /dev/sci1 c 169 1"
+		will creat two file nodes
+
+2. Files of sci_drv & its test file
+2.1 sci_inf.c           The POSIX interface file of sci_drv
+    sci_osd.c           The OS-dependent layer file of sci_drv
+    sci_osd.h           The OS-dependent layer header file of sci_drv
+    sci_osi.c           The OS-independent layer file of sci_drv
+    sci_osi.h           The OS-independent layer header file of sci_drv
+    sci_atom.c          The atom function file od sci_drv
+    sci_atom.h          The atom function header file od sci_drv
+    sci_local.h         The internel parameters and structure define file of sci_drv
+2.2 test/mu_sci.c       The test menu file of scit
+    test/mu_sci.h       The header file of test menu
+    test/sci_prot.c     The protocol layer function of scit
+    test/sci_prot.h     The public header file of protocol function
+    test/sc.h           The private header file of protocal fucntion
+2.3 ../include/sci/sci_inf.h        The POSIX interface header file of sci_drv
+    ../include/sci/sci_global.h     The public header file of sci_drv
+
+3. Usage of scit
+3.1 "sc0" or "sc1" can select the card socket number. You have to do it first.
+3.2 "rt" to reset and get ATR from the card
+3.3 "sf" to send SELECT FILE 0x1005 command. If it response 0x90 0x00 means
+	successful. If it response 0x6a 0x82 means FILE NOT FOUND.
+3.4 "ur" to enter the ASCII what you want to write to the file 0x1005
+3.5 "rr" to verify if the file update ssuccessful.
+3.6 "sf" must be perform before "ur"/"rr"
+3.7 NOTE: 
+        The card reader MUST be connected to the borad properly. If the card
+        reader is not present, the SCI regisiter can not reflect the status of
+        if a card is present. This will result the device driver error.
+
+4. Changes
+
+Date        Bug Fixes                                   Affected sources
+-----------------------------------------------------------------------------------
+12/03/2001  Fixed error handling bug in sc_apdu() by    sci_prot.c
+            adding check_incoming_data(). This fixed
+            incorrect receive length occurring when
+            card responds with a two byte error-code
+            instead of the expected number of bytes.
+            Fixed error handling problem in
+            sc_t1_command().
+            Improved data handling efficiency in
+            sc_t0_command().
+
+12/13/2001  Move init, uninit, reset, read, write and   sci_osd.c, sci_osi.c,
+            irq handler to the OS-dependent layer.      sci_osi_local.c
+            Merge sci_osi.c and sci_osi_local.c.
+
+12/13/2001  EMV2000 support and made several changes    sci_atom.c, sci_osi.c,
+            to improve PIO efficiency.                  sci_osd.c
+
+12/13/2001  Changed SCI_MAX_F to 80000000.              sci_global.h
+
+12/13/2001  Added EMV2000 defines, TX timeout define    sci_local.h
+            and SCI_DRV_MODES defines.
+
+01/11/2002  Add timeout to read/write function          sci_osd.c
+
+07/04/2002  Add support for Vesta, Pallas and Vulcan    sci_atom.c
+            in one driver file

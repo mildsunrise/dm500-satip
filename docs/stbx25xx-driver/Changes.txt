@@ -1,0 +1,107 @@
+STB025xx Changes Since Last Release
+_______________________________________________________________________________________
+Date:           2/11/04
+Description:    Update driver version number.
+Files Changed:  include/os Directory: pversion.h
+APIs Effected:  None.
+________________________________________________________________________________________
+Date:           2/9/04
+Description:    Add devfs support.
+Files Changed:  AUD Directory: aud_inf.c
+                Demux Directory: xp_osd_drv.h xp_osd_inf.c
+                GFX Directory: gfx_inf.c
+                IR Directory: ir_inf_combo.c
+                SCI Directory: sci_inf.c
+                SCP Directory: scp_inf.c
+                TTX Directory: ttx_osd_inf.c
+                VID Directory: vid_inf.c
+                fe_sonysat Directory: tuner.c
+                rtc_fpc Directory: rtc_fpc.c
+APIs Effected:  None.
+________________________________________________________________________________________
+Date:           1/22/04
+Description:    Update audio microcode to version 3.18.
+Files Changed:  AUD Directory: drv.make
+New Files:      AUD Directory: s5amp318.bin s5amp318.dat
+APIs Effected:  None.
+_______________________________________________________________________________________
+Date:           01/15/04
+Component:      aclip_t test module
+Description:    Force audio unmute at beginning of the test.
+Files Changed:  aud Directory: aclip_t.c
+APIs Effected:  None.
+_______________________________________________________________________________________
+Date:           01/15/04
+Component:      tv_t test module
+Description:    Change tv_t to call video freeze instead of video stop if the user
+                selects the 'f' option for video freeze.
+Files Changed:  vid Directory: tv_t.c
+APIs Effected:  None.
+______________________________________________________________________________________________________________________________________________________________________________
+Date:           01/15/04
+Component:      test_av test module
+Description:    Force audio unmute at beginning of the test.
+Files Changed:  Demux Directory: test_av.c
+APIs Effected:  None.
+________________________________________________________________________________________
+Date:           01/15/04
+Description:    Updated video microcode to version 3.06.
+                This microcode release alters the size of the video frame buffers as
+                specified in vid_atom_others.c
+Files Changed:  Vid Directory: atom.make vid_atom_others.c
+New File:       Vid Directory: s025v306.bin
+APIs Effected:  None.
+________________________________________________________________________________________
+Date:           01/15/04
+Description:    Fix compiler warning messages with MVL 3.1
+Files Changed:  Demux Directory: xp_atom_dcr.c xp_osi_filte.c xp_osi_clk.c
+                xp_osi_chann.c pvr_osi.c xp_osi.c
+                Os Directory: os-sync.c
+                Tools Directory: img2header.c
+APIs Effected:  None.
+________________________________________________________________________________________
+Date:           01/13/04
+Description:    Correct problem with channel changes in the
+                DemuxFilterPESDecoderSet() and DemuxFilterStart() functions such that
+                once channel changes are started, the channel change registers are
+                always used (as opposed to direct writes to the PID registers).
+Files Changed:  Demux Directory: xp_osd_drv.c
+APIs Effected:  None.
+_______________________________________________________________________________________
+Date:           01/09/04
+Description:    Changed to read a multiple of 188 bytes from the transport driver to
+                prevent the processing of partial TTX packets (which are 188 bytes ea).
+Files Changed:  TTX Directory: test_ttx.c
+APIs Effected:  None.
+________________________________________________________________________________________
+Date:           01/08/04
+Description:    Minor improvement to user input description.
+Files Changed:  Demux Directory: test_rec_pes.c, test_rec_ts.c
+APIs Effected:  None.
+________________________________________________________________________________________
+Date:           01/08/04
+Description:    Changed xp_key_getall() and xp_key_setall() APIs such that the third
+                parameter is a pointer to a structure which contains the six keys
+                (Init A, Init B, Even A, Even B, Odd A, Odd B).  Intent was to
+                eliminate the confusion regarding the proper order of the keys.
+Files Changed:  Demux Directory: xp_osi_key.h xp_osi.key.c
+APIs Effected:  None.
+_______________________________________________________________________________________
+Date:           12/23/03
+Description:    The internal buffer in the DemuxPESCallBack() function is used to
+                temporarily store data received from the transport queue.  The internal
+                buffer can only properly store one entry.  Therefore, a read must be
+                done prior to input of the next entry or the previous data is lost. The
+                problem was corrected by changing the internal buffer to a circular
+                buffer.
+Files Changed:  Demux Directory: xp_osd_drv.c
+APIs Effected:  None.
+_______________________________________________________________________________________
+Date:           12/02/03
+Description:    If the input file is small enough to fit entirely in the internal buffer
+                then only read it once to fill the buffer and dont re-read the file each
+                time the program loops to send the file again.
+
+Files Changed:  Demux Directory: test_pvr.c
+APIs Effected:  none.
+_______________________________________________________________________________________
