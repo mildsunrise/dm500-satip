@@ -29,4 +29,4 @@ cat $CRAMFS > $OUTFILE
 # Remove temporary folder
 rm -rf $TMPDIR
 
-# FIXME: fail if image is too big
+# FIXME: fail if image is too big, remove note from BUILDING.md

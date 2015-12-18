@@ -28,11 +28,12 @@ install $DATA/dvb.sh $FS/etc/init.d/S70dvb
 # Install minisatip data
 install -d $FS/usr/share/minisatip
 install -m 644 $DATA/satip.xml $FS/usr/share/minisatip
-# TMP:
-install -s $DATA/minisatip $FS/bin
-install -d $DATA/usr/share/minisatip/html
-install -m 644 $DATA/html/lr.png $FS/usr/share/minisatip/html
-install -m 644 $DATA/html/lr.jpg $FS/usr/share/minisatip/html
+# FIXME: remove this, replace by package
+install $DATA/minisatip $FS/bin
+install -d $FS/usr/share/minisatip/html
 install -m 644 $DATA/html/sm.png $FS/usr/share/minisatip/html
 install -m 644 $DATA/html/sm.jpg $FS/usr/share/minisatip/html
 install -m 644 $DATA/html/status.html $FS/usr/share/minisatip/html
+
+# Install other files
+install $DATA/misc/udhcpc-hostname.sh $FS/usr/share/udhcpc/default.script.d/set-hostname

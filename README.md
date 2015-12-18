@@ -58,9 +58,9 @@ for some seconds, then connect it again. This only needs to
 be done the first time.
 
 When powered, DM500 will obtain an IP by DHCP, and the
-SAT>IP server will start. To test it's working, browse to
-`http://<ip of DM500>:8080/desc.xml` and verify that you see
-`DVBS2-1` at the end, instead of `DVBS2-0`.
+SAT>IP server will start. To verify that it's working, browse to
+`http://<ip of DM500>:8080`, you should see a table listing one
+tuner.
 
 You use it like any other SAT>IP server. If it's on the same
 network as your Tvheadend server, restart it and you should
@@ -73,11 +73,12 @@ feel free to open an issue on this repo.
 
 **This image is not based on the official firmware.** Instead,
 it's an effort to build a firmware from scratch, basing on the
-efforts of the [stbx25xx-linux] project, which ported Linux
-2.6.28 to the IBM STBx25xx (the SoC in DM500).
+efforts of the (currently abandoned) [stbx25xx-linux] project,
+which ported Linux 2.6.28 to the IBM STBx25xx (the SoC in DM500).
 
 I [forked][kernel-fork] the stbx25xx-linux project and added support
-for the DM500 and a few of its hardware. Currently, the kernel supports:
+for the DM500 and a few of its hardware (reverse engineered some of
+the closed-source drivers). Currently, the kernel supports:
 
  - DVB frontend (STV0299), PLL tuner
  - DVB demuxer, video decoder, audio decoder
@@ -104,3 +105,14 @@ output and audio output are also in the works.
 
 [Buildroot] is what builds the toolchain, software, kernel, filesystem,
 and calls `build-img.sh` to produce the final firmware image.
+
+
+
+[SAT>IP]: https://en.wikipedia.org/wiki/Sat-IP
+[oscam]: http://www.streamboard.tv/oscam
+[minisatip]: https://github.com/catalinii/minisatip
+[tvheadend]: https://tvheadend.org/
+[releases]: https://github.com/mildsunrise/dm500-satip/releases
+[buildroot]: https://buildroot.org
+[stbx25xx-linux]: http://stbx25xx-linux.sf.net
+[kernel-fork]: https://github.com/mildsunrise/stbx25xx-linux

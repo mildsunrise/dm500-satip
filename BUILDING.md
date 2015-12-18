@@ -53,13 +53,13 @@ make[2]: *** [__headers] Error 2
 ~~~
 
 This is fixed by editing `output/build/linux-headers-2.6.28/scripts/unifdef.c`
-and replacing all three instances of `getline` with another name, say `getline2`.
+and replacing all three instances of `getline` with another name, say `get_line`.
 After that, issue the `LANG=C LANGUAGE=C make` command and the build should
 proceed.
 
 Another error mentions the `include/linux/socket.h` and some redefinitions
 of `struct iovec`. To fix it, edit
-`output/build/linux-headers-2.6.28/include/linux/socket.h` and replace the line:
+`output/build/linux-headers-2.6.28/usr/include/linux/socket.h` and replace the line:
 
 ~~~
 #if defined(__KERNEL__) || !defined(__GLIBC__) || (__GLIBC__ < 2)
@@ -71,7 +71,6 @@ with just
 #if defined(__KERNEL__)
 ~~~
 
-Do the same with `output/build/linux-headers-2.6.28/usr/include/linux/socket.h`.
 Try again and the build should proceed. If you find more errors, please open
 an issue on this repo.
 

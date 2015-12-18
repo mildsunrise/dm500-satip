@@ -617,7 +617,7 @@ CONFIG_DVB_CAPTURE_DRIVERS=y
 #
 # IBM Systems-On-Chip for Set-Top-Boxes
 #
-CONFIG_DVB_STBx25xx=y
+CONFIG_DVB_STBx25xx=m
 # CONFIG_DVB_STBx25xx_AV is not set
 
 #
