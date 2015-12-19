@@ -2,7 +2,7 @@
 
 Start by installing the necessary tools:
 
-    sudo apt-get install build-essentials cramfsprogs
+    sudo apt-get install build-essential cramfsprogs cramfsswap file coreutils
 
 Then download and extract Buildroot at this repository, so that
 you end with a `buildroot-XXXX.XX.XX` directory next to the `config_*`
@@ -12,16 +12,11 @@ files. I used version 2015.12.1 but other versions may work as well:
 
 For convenience, rename `buildroot-XXXX.XX.XX` to just `buildroot`:
 
-    mv buildroot-XXXX.XX.XX buildroot
+    mv buildroot-2015.11.1 buildroot
 
 Then supply Buildroot with our configuration file:
 
     cp config_buildroot buildroot/.config
-
-You also need to copy the contents of `packages` into the Buildroot
-directory:
-
-    cp -r packages/* buildroot/packages
 
 At this point, you can `cd buildroot` and optionally tweak the configuration
 by doing `make menuconfig`, `make xconfig` or whatever method you like.

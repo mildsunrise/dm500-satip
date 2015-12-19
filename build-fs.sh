@@ -26,8 +26,6 @@ fi
 install $DATA/dvb.sh $FS/etc/init.d/S70dvb
 
 # Install minisatip data
-install -d $FS/usr/share/minisatip
-install -m 644 $DATA/satip.xml $FS/usr/share/minisatip
 # FIXME: remove this, replace by package
 install $DATA/minisatip $FS/bin
 install -d $FS/usr/share/minisatip/html

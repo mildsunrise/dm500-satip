@@ -19,5 +19,8 @@ It includes:
    sure it doesn't come with a timebomb if you have a clone).
 
  - `stbx25xx-driver`: folder containing what appears to be the source
-   code for IBM STBx25xx drivers. The firmware blobs were extracted
+   code for IBM ~~STBx25xx~~ drivers. The firmware blobs were extracted
    from this archive.
+
+   **Warning:** actually STB043xx, it seems. However, firmware verification
+   went okay, and registers appear to match...

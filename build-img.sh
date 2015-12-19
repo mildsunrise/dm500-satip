@@ -22,6 +22,10 @@ install $ZIMAGE $TMPDIR/root/platform/kernel/os
 
 # Make CramFS
 mkcramfs -n 'Compressed' $TMPDIR $CRAMFS
+if [ $(printf '\1' | od -dAn) -eq 1 ]; then
+  cramfsswap $CRAMFS $CRAMFS.be
+  mv $CRAMFS.be $CRAMFS
+fi
 
 # Make image
 cat $CRAMFS > $OUTFILE
