@@ -68,7 +68,8 @@ you should see the DM500 appear in the inputs tab.
 
 **Important:** The SAT>IP server does *not* support full TS
 streaming (aka `pids=all`)! For Tvheadend users, this means you
-should untick the "Send full PLAY command" checkbox if it's ticked.
+should untick the "Full Mux Rx mode supported" checkbox if it's
+ticked.
 
 If you found a bug or have a suggestion for the firmware image,
 feel free to open an issue on this repo.
