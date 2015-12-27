@@ -3,10 +3,10 @@
 This is an effort to build a firmware image for the Dreambox
 DM500 set-top-box, that effectively turns it into a
 fully-operational [SAT>IP] server, with the only job of
-streaming the TS stream straight from the DVB tuner.
+streaming the transport stream straight from the DVB tuner.
 
 The SAT>IP server can be accessed directly through various client
-apps, or can be feed as input to [Tvheadend]. This last option
+apps, or can be fed as input to [Tvheadend]. This last option
 allows you to:
 
  - Join multiple SAT>IP servers (and USB tuners) and use them
