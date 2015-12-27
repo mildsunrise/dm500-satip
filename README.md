@@ -83,21 +83,27 @@ which ported Linux 2.6.28 to the IBM STBx25xx (the SoC in DM500).
 
 I [forked][kernel-fork] the stbx25xx-linux project and added support
 for the DM500 and a few of its hardware (reverse engineered some of
-the closed-source drivers). Currently, the kernel supports:
+the closed-source drivers). Currently, the following hardware from
+the DM500 is usable and has been tested:
 
  - DVB satellite frontend (STV0299), PLL tuner
- - DVB demuxer, video decoder, audio decoder
+ - DVB demuxer
  - GPIO (two LEDs, LNB voltage, etc.)
  - I2C bus
- - The RS-232 UART
+ - RS-232 UART
  - NE2000-based network
 
-Currently unsupported hardware (or not finished):
+Hardware that has support but has not been tested, is not enabled
+in `config_kernel` or isn't finished:
 
- - DVB terrestrial and cable frontends
- - Flash memory
+ - DVB video decoder, audio decoder
  - Audio output
  - Video output
+ - Flash memory
+
+Unsupported hardware, or hardware which hasn't been investigated:
+
+ - DVB terrestrial and cable frontends
  - Smartcard reader
  - IR receiver
 
