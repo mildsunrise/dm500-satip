@@ -69,7 +69,11 @@ you should see the DM500 appear in the inputs tab.
 **Important:** The SAT>IP server does *not* support full TS
 streaming (aka `pids=all`)! For Tvheadend users, this means you
 should untick the "Full Mux Rx mode supported" checkbox if it's
-ticked.
+ticked, in the SAT>IP server entry.
+
+**Important:** The SAT>IP server does *not* support more than
+29 concurrent PIDs! For Tvheadend users, this means you should
+set "Maximum PIDs" to 29, in the SAT>IP server entry.
 
 If you found a bug or have a suggestion for the firmware image,
 feel free to open an issue on this repo.
