@@ -43,8 +43,8 @@ Some important things to consider:
    because support for the T and C tuners is missing (see next
    section).
 
- - **You should have an RS-232 adapter at hand.** DreamUp has an
-   option to flash over the network, and it'll work just as well,
+ - **You should have an RS-232 adapter at hand.** There's software
+   that can flash a DM500 over the network, and it'll work just fine,
    but **after this is flashed, the only way to reflash is via
    RS-232**.
 
@@ -52,10 +52,6 @@ If you aren't flashing via DreamUp, make sure you flash to partition
 0 (labeled "CramFS + SquashFS" or similar).
 
 ## Usage
-
-Once the image is flashed, disconnect power from the DM500
-for some seconds, then connect it again. This only needs to
-be done the first time.
 
 When powered, DM500 will obtain an IP by DHCP, and the
 SAT>IP server will start. To verify that it's working, browse to
