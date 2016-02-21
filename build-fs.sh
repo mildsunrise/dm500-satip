@@ -23,7 +23,7 @@ if [ $COPY_FIRMWARE -ne 0 ]; then
 fi
 
 # Install init script
-install $DATA/dvb.sh $FS/etc/init.d/S70dvb
+install $DATA/satip.sh $FS/etc/init.d/S70satip
 
 # Install minisatip data
 # FIXME: remove this, replace by package
