@@ -1,0 +1,2 @@
+# This is merged with the default Busybox config.
+CONFIG_TELNETD=y

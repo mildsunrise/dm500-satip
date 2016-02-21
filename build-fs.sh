@@ -35,3 +35,4 @@ install -m 644 $DATA/html/status.html $FS/usr/share/minisatip/html
 
 # Install other files
 install $DATA/misc/udhcpc-hostname.sh $FS/usr/share/udhcpc/default.script.d/set-hostname
+install -m 644 $DATA/misc/inetd.conf $FS/etc/inetd.conf
