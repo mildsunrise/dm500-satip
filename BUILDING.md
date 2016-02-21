@@ -6,7 +6,7 @@ Start by installing the necessary tools:
 
 Then download and extract Buildroot at this repository, so that
 you end with a `buildroot-XXXX.XX.XX` directory next to the `config_*`
-files. I used version 2015.12.1 but other versions may work as well:
+files. I used version 2015.11.1 but other versions may work as well:
 
     wget https://buildroot.org/downloads/buildroot-2015.11.1.tar.gz -O- | tar xz
 
