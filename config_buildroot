@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2015.11.1-g909e9bf-dirty Configuration
+# Buildroot 2015.11.1-g4961915-dirty Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 
@@ -879,7 +879,7 @@ BR2_PACKAGE_CMAKE_ARCH_SUPPORTS=y
 #
 # dvb-apps utils needs a toolchain w/ threads, headers >= 3.3
 #
-# BR2_PACKAGE_DVBSNOOP is not set
+BR2_PACKAGE_DVBSNOOP=y
 # BR2_PACKAGE_EEPROG is not set
 
 #
