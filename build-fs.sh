@@ -32,6 +32,8 @@ install -d $FS/usr/share/minisatip/html
 install -m 644 $DATA/html/sm.png $FS/usr/share/minisatip/html
 install -m 644 $DATA/html/sm.jpg $FS/usr/share/minisatip/html
 install -m 644 $DATA/html/status.html $FS/usr/share/minisatip/html
+install -m 644 $DATA/html/status.js $FS/usr/share/minisatip/html
+install -m 644 $DATA/html/status.css $FS/usr/share/minisatip/html
 
 # Install other files
 install $DATA/misc/udhcpc-hostname.sh $FS/usr/share/udhcpc/default.script.d/set-hostname
