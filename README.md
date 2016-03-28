@@ -122,7 +122,7 @@ Support for the video output and audio output are also in the works.
 and calls `build-img.sh` to produce the final firmware image.
 
 [minisatip] is the SAT>IP server implementation used by this image. It's
-version 0.4 with the modifications at [the `dm500-satip-2.0` branch][minisatip-compare]
+version 0.4 with the modifications at [the `dm500-satip-2.1` branch][minisatip-compare]
 in my fork.
 
 
@@ -135,4 +135,4 @@ in my fork.
 [buildroot]: https://buildroot.org
 [stbx25xx-linux]: http://stbx25xx-linux.sf.net
 [kernel-fork]: https://github.com/mildsunrise/stbx25xx-linux
-[minisatip-compare]: https://github.com/catalinii/minisatip/compare/0.4...mildsunrise:dm500-satip-2.0
+[minisatip-compare]: https://github.com/catalinii/minisatip/compare/0.4...mildsunrise:dm500-satip-2.1
