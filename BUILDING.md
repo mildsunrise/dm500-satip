@@ -1,5 +1,9 @@
 # Building dm500-satip
 
+**Important:** Building no longer possible with Ubuntu 16.04 due to upgrade from
+Make 3.82 to Make 4.1, and also Perl. I was able to build by downgrading these two
+things, but I strongly recommend using Ubuntu 14.04 (or similar).
+
 Start by installing the necessary tools:
 
     sudo apt-get install build-essential cramfsprogs cramfsswap file coreutils
