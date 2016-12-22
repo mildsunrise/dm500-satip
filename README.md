@@ -43,11 +43,6 @@ Some important things to consider:
    because support for the T and C tuners is missing (see next
    section).
 
- - **You should have an RS-232 adapter at hand.** There's software
-   that can flash a DM500 over the network, and it'll work just fine,
-   but **after this is flashed, the only way to reflash is via
-   RS-232**.
-
 If you aren't flashing via DreamUp, make sure you flash to partition
 0 (labeled "CramFS + SquashFS" or similar).
 
@@ -96,6 +91,7 @@ the DM500 is usable and has been tested:
  - I2C bus
  - RS-232 UART
  - NE2000-based network
+ - NOR flash memory
 
 Hardware that has support but has not been tested, is not enabled
 in `config_kernel` or isn't finished:
@@ -103,7 +99,6 @@ in `config_kernel` or isn't finished:
  - DVB video decoder, audio decoder
  - Audio output
  - Video output
- - Flash memory
 
 Unsupported hardware, or hardware which hasn't been investigated:
 
