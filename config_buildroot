@@ -7,7 +7,6 @@ BR2_HAVE_DOT_CONFIG=y
 #
 # Target options
 #
-BR2_SOFT_FLOAT=y
 BR2_ARCH_HAS_MMU_MANDATORY=y
 # BR2_arcle is not set
 # BR2_arceb is not set
@@ -79,7 +78,7 @@ BR2_powerpc_405=y
 # BR2_powerpc_power7 is not set
 # BR2_powerpc_power8 is not set
 BR2_powerpc_CLASSIC=y
-BR2_POWERPC_SOFT_FLOAT=y
+# BR2_POWERPC_SOFT_FLOAT is not set
 
 #
 # Build options
@@ -335,8 +334,8 @@ BR2_LINUX_KERNEL_CUSTOM_GIT=y
 # BR2_LINUX_KERNEL_CUSTOM_HG is not set
 # BR2_LINUX_KERNEL_CUSTOM_LOCAL is not set
 BR2_LINUX_KERNEL_CUSTOM_REPO_URL="https://github.com/mildsunrise/stbx25xx-linux.git"
-BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION="stable-3"
-BR2_LINUX_KERNEL_VERSION="stable-3"
+BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION="stable-4"
+BR2_LINUX_KERNEL_VERSION="stable-4"
 BR2_LINUX_KERNEL_PATCH=""
 # BR2_LINUX_KERNEL_USE_DEFCONFIG is not set
 BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG=y
