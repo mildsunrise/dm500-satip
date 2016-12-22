@@ -13,8 +13,7 @@ mkdir -p /dev/dvb/adapter0 && cd /dev/dvb/adapter0
 [ -e /sys/class/dvb/dvb0.net0 ] && mknod net0 u 212 7
 [ -e /sys/class/dvb/dvb0.video0 ] && mknod video0 u 212 0
 
-# Start SAT>IP server and inetd
+# Start SAT>IP server
 minisatip -R /usr/share/minisatip/html -x 80
-inetd
 
 exit 0

@@ -69,7 +69,7 @@ set "Maximum PIDs" to 29, in the SAT>IP server entry.
 If you found a bug or have a suggestion for the firmware image,
 feel free to open an issue on this repo.
 
-The DM500 also has a telnet server running, you can login with
+The DM500 also has an SSH server running, you can login with
 `root` and password `dreambox`. Thus, **make sure the DM500 is
 behind a firewall**.
 
