@@ -106,8 +106,9 @@ Unsupported hardware, or hardware which hasn't been investigated:
  - Smartcard reader
  - IR receiver
 
-Because the flash memory isn't supported yet, we're forced to put
-the FS into an initrd.
+The files are put into a JFFS2 filesystem, which ends up in the
+partition next to the CramFS (where a SquashFS would go, in traditional
+firmwares).
 
 The audio and video decoders need firmware blobs to be supplied, so make
 sure to enable `FW_LOADER` and set `COPY_FIRMWARE` to `1` in `build-fs.sh`.

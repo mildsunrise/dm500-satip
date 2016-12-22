@@ -75,8 +75,3 @@ an issue on this repo.
 
 When the build has finished, you should have your image at
 `output/images/flash.img`, ready to flash with i.e. DreamUp.
-
-**Important:** Verify that `flash.img` is smaller than 5MB. **Do not
-flash it if it's bigger.** (Actually the flash allows up to 6MB, but do
-not use the extra megabyte unless you know what you are doing, you can
-completely brick your DM500 otherwise!)
