@@ -37,11 +37,14 @@ Some important things to consider:
    doesn't work you should be able to flash another image.
    **It has no time bombs** (see last section).
 
- - **This image is currently for DM500S only.** If you flash it
-   on a DM500T or DM500C it will work the same, you'll see the
-   SAT>IP server but you won't find any tuner in it. This is
-   because support for the T and C tuners is missing (see next
-   section).
+ - **This image is currently for DM500S only.** Flashing it on
+   a DM500T or DM500C will get you a nice SAT>IP server with 0
+   tuners, because support for the T/C frontends is missing.
+
+   I've been unable to find a DM500T or DM500C at a decent price.
+   If you have one to spare, you can donate it (contact me) and
+   I'll happily implement the support, it shouldn't take much (not
+   guaranteeing anything though).
 
 If you aren't flashing via DreamUp, make sure you flash to partition
 0 (labeled "CramFS + SquashFS" or similar).
