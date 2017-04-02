@@ -51,3 +51,11 @@
 
 # I2C device nodes
 /dev/i2c-	c	666	0	0	89	0	0	1	4
+
+# DVB tuner
+/dev/dvb			d	755	0	0	-	-	-	-	-
+/dev/dvb/adapter0		d	755	0	0	-	-	-	-	-
+/dev/dvb/adapter0/frontend0	c	660	0	0	212	3	-	-	-
+/dev/dvb/adapter0/demux0	c	660	0	0	212	4	-	-	-
+/dev/dvb/adapter0/dvr0		c	660	0	0	212	5	-	-	-
+/dev/dvb/adapter0/net0		c	660	0	0	212	7	-	-	-
