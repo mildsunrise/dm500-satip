@@ -49,6 +49,24 @@ Some important things to consider:
 If you aren't flashing via DreamUp, make sure you flash to partition
 0 (labeled "CramFS + SquashFS" or similar).
 
+### The static version
+
+Starting at version 2.3, a 'static' image is distributed along with
+the regular one.
+
+If the regular one won't boot on your box (probably because of
+corrupted flash memory) try to flash the static one. It's pretty
+much the same, but uses a **read-only FS** so it'll probably work
+correctly.
+
+Because of the read-only FS, all changes you make through SSH
+(including changing the root password, firewall, static IP, init
+script) will go away on the next boot. If you need those changes
+permanently, build your own image.
+
+Also, a different SSH host key is generated on every boot, so you'll
+need to revoke the key each time SSH gets mad.
+
 ## Usage
 
 When powered, DM500 will obtain an IP by DHCP, and the

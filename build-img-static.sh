@@ -53,7 +53,6 @@ append_part() {
 dd bs=128k of="$OUTFILE" if=/dev/null count=9
 
 # Write each part
-append_part 0 1179648 "$CRAMFS"
-append_part 9 5111808 "$JFFS2"
+append_part 0 6291456 "$CRAMFS"
 
 echo -e "\nFirmware image generated: $OUTFILE"

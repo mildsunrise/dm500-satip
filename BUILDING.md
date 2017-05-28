@@ -18,9 +18,11 @@ For convenience, rename `buildroot-XXXX.XX.X` to just `buildroot`:
 
     mv buildroot-2017.02.1 buildroot
 
-Then supply Buildroot with our configuration file:
+Then supply Buildroot with one of the configuration files, depending on which version
+you want to build:
 
-    cp config_buildroot buildroot/.config
+    cp config_buildroot buildroot/.config         # build regular version
+    cp config_buildroot_static buildroot/.config  # build static version
 
 At this point, you can `cd buildroot` and optionally tweak the configuration
 by doing `make menuconfig`, `make xconfig` or whatever method you like.
