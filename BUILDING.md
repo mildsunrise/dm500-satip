@@ -10,13 +10,13 @@ Start by installing the necessary tools:
 
 Then download and extract Buildroot at this repository, so that
 you end with a `buildroot-XXXX.XX.X` directory next to the `config_*`
-files. I used version 2017.02.1 but other versions may work as well:
+files. I used version 2017.05-rc3 but other versions may work as well:
 
-    curl https://buildroot.org/downloads/buildroot-2017.02.1.tar.gz | tar xz
+    curl https://buildroot.org/downloads/buildroot-2017.05-rc3.tar.gz | tar xz
 
 For convenience, rename `buildroot-XXXX.XX.X` to just `buildroot`:
 
-    mv buildroot-2017.02.1 buildroot
+    mv buildroot-2017.05-rc3 buildroot
 
 Then supply Buildroot with one of the configuration files, depending on which version
 you want to build:
@@ -57,11 +57,6 @@ This is fixed by editing `output/build/linux-headers-2.6.28/scripts/unifdef.c`
 and replacing all three instances of `getline` with another name, say `get_line`.
 After that, issue the `LANG=C LANGUAGE=C make` command and the build should
 proceed.
-
-Another error mentions that `__NR_preadv` is undeclared,
-it's fixed by removing `output/build/uclibc-1.0.22/libc/sysdeps/linux/common/preadv.c`
-and also `output/build/uclibc-1.0.22/libc/sysdeps/linux/common/pwritev.c`. Then
-continue with the build.
 
 Another error mentions the `include/linux/socket.h` and some redefinitions
 of `struct iovec`. To fix it, edit
