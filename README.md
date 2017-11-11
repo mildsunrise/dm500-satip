@@ -87,6 +87,10 @@ ticked, in the SAT>IP server entry.
 29 concurrent PIDs! For Tvheadend users, this means you should
 set "Maximum PIDs" to 29, in the SAT>IP server entry.
 
+**Important:** The SAT>IP server does *not* support DVB-S2 (aka
+HD channels)! An option [has been added in TVHeadend](http://tvheadend.org/issues/4466)
+to restrict the delivery systems for a DVB card, set it.
+
 If you found a bug or have a suggestion for the firmware image,
 feel free to open an issue on this repo.
 
